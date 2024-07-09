@@ -6,7 +6,7 @@ body {
 
 canvas {
     display: block;
-    
+    vertical-align: top;
 }
 
 html, body {
@@ -167,9 +167,9 @@ body {
 .projects-container {
     margin-top: 20px;
     padding: 20px;
-    width: 100%;
-    height: calc(100% - 40px); /* Adjust for padding and margin */
-    box-sizing: border-box;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .projects-container h2 {
@@ -179,15 +179,13 @@ body {
 }
 
 .projects-list {
-    height: calc(100% - 80px); /* Adjust for h2 and padding */
-    overflow-y: auto;
-    border: 1px solid #ddd;
     padding: 20px;
     background-color: #f9f9f9;
 }
 
 .project-item {
     margin-bottom: 20px;
+    overflow: hidden; /* Ensure each project item handles its own content flow */
 }
 
 .project-item h3 {
@@ -200,12 +198,10 @@ body {
 }
 
 .project-image {
-    width: 400px; /* Adjust the width as needed */
+    max-width: 100%;
     height: auto;
     display: block;
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin: 0 auto;
 }
 
 .button-link {
@@ -225,17 +221,12 @@ body {
     background-color: #45a049;
 }
 
-.clear-float {
-    clear: both;
-}
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
-    .project-image {
+    .navbar a {
         float: none;
         display: block;
-        margin: 0 auto 10px;
-        width: 100%;
-        max-width: 300px;
+        text-align: left;
     }
 
     .projects-container {
@@ -246,14 +237,23 @@ body {
         padding: 10px;
     }
 
-    .navbar a {
+    .project-image {
         float: none;
         display: block;
-        text-align: left;
+        margin: 0 auto 10px;
+        width: 100%;
+        max-width: 300px;
     }
 
-    .card-movie__title {
-        font-size: 40px;
+    .project-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-item p {
+        text-align: justify;
     }
 
     .button-link {
@@ -273,10 +273,6 @@ body {
 
     .project-item p {
         font-size: 14px;
-    }
-
-    .card-movie__title {
-        font-size: 32px;
     }
 
     .button-link {
