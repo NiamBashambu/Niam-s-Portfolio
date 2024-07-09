@@ -36,13 +36,15 @@ body {
 
 .card-movie-wrapper {
     box-shadow: 0px 0px 100px 25px rgba(0, 0, 0, 0.2);
-    height: auto;
+    height: 440px;
     position: relative;
-    width: 100%;
-    max-width: 840px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
+    width: 840px;
+}
+
+.card-movie-wrapper:hover .card-movie-carousel {
+    transition: all 250ms ease-in-out;
+    bottom: 60px;
+    right: 40px;
 }
 
 .card-movie-wrapper--centered {
@@ -53,52 +55,81 @@ body {
 }
 
 .card-movie__content {
-    position: relative;
-    text-align: center;
+    left: 20px;
+    position: absolute;
+    top: 20px;
 }
 
 .card-movie__title {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    font-size: 36px;
+    font-size: 60px;
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
+    margin-right: 30px;
 }
 
 .card-movie__title .profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+    width: 325px; /* Adjust the width as needed */
+    height: 325px; /* Adjust the height as needed */
+    border-radius: 70%;
+    margin-right: 60px; /* Adjust the spacing as needed */
+    margin-top: 18px;
     object-fit: cover;
 }
 
 .card-movie__details {
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: -90px;
+}
+
+.card-movie__details-item {
+    display: block;
+    float: right;
+    margin-right: 150px;
+    font-size: 15px;
+}
+
+.card-movie__details-list li {
+    float: right;
+    margin-right: 5px;
+    padding-right: 6px;
+}
+
+.card-movie__details-list li:after {
+    content: '|';
+    position: absolute;
+    right: 0;
+}
+
+.card-movie__details-list li:last-child {
+    margin-right: 0;
+}
+
+.card-movie__details-list li:last-child:after {
+    display: none;
 }
 
 .card-content__links {
-    margin-top: 20px;
+    position: absolute;
+    top: 100px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
 }
 
 .card-content__links a {
-    display: inline-block;
-    background-color: #4CAF50;
+    display: block;
+    background-color: black;
     color: white;
     text-align: center;
-    padding: 10px 20px;
+    padding: 14px 16px;
     text-decoration: none;
-    font-size: 16px;
-    margin: 10px 5px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 17px;
+    margin-bottom: 10px;
 }
 
 .card-content__links a:hover {
-    background-color: #45a049;
+    background-color: #ddd;
+    color: black;
 }
 
 /* Place the navbar at the bottom of the page, and make it stick */
@@ -133,8 +164,102 @@ body {
     color: #676767;
 }
 
+.projects-container {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-container h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects-list {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.project-item {
+    margin-bottom: 20px;
+    overflow: hidden; /* Ensure each project item handles its own content flow */
+}
+
+.project-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 16px;
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.button-link {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #45a049;
+}
+
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
+    .navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .projects-container {
+        padding: 10px;
+    }
+
+    .projects-list {
+        padding: 10px;
+    }
+
+    .project-image {
+        float: none;
+        display: block;
+        margin: 0 auto 10px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .project-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-item p {
+        text-align: justify;
+    }
+
+    .button-link {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
     .navbar a {
         float: none;
         display: block;
@@ -165,7 +290,25 @@ body {
     }
 }
 
+
+
 @media screen and (max-width: 480px) {
+    .projects-container h2 {
+        font-size: 28px;
+    }
+
+    .project-item h3 {
+        font-size: 20px;
+    }
+
+    .project-item p {
+        font-size: 14px;
+    }
+
+    .button-link {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
     .card-movie-wrapper {
         padding: 10px;
         margin: 10px;
@@ -188,4 +331,5 @@ body {
         font-size: 12px;
         padding: 6px 12px;
     }
+
 }
