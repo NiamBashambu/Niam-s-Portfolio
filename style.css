@@ -12,6 +12,7 @@ canvas {
 html, body {
     height: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
@@ -19,6 +20,13 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    max-width: 840px;
+    margin: auto;
+    padding: 20px;
 }
 
 *,
@@ -260,11 +268,7 @@ body {
         font-size: 14px;
         padding: 8px 16px;
     }
-    .navbar a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
+    
 
     .card-movie-wrapper {
         padding: 10px;
